@@ -11,15 +11,14 @@
   <body>
     <div class="container">
     <nav class="navbar navbar-default navbar-fixed-top">
-
       <div class="collapse navbar-collapse" id="nav">
            <ul class="nav navbar-nav">
                <li><a href="#about">About</a></li>
                <li><a href="#pets">Pets</a></li>
                <li><a href="#adopt">Adopt</a></li>
+               <li><a href="#add-pet">Add pet</a></li>
            </ul>
       </div>
-
   </nav>
 
       <div id="page1">
@@ -37,7 +36,7 @@ Learn more about what it means to be a no-kill shelter.
 
 Learn how we make our mission work through our rescue, shelter and adoption programs.
 
-Take a virtual tour of the shelter here.      
+Take a virtual tour of the shelter here.
             </p>
           </div>
       </div>
@@ -50,6 +49,30 @@ Take a virtual tour of the shelter here.
       <div id="page3">
         <a id="adopt" class="smooth"></a>
           Adopt form.
+      </div>
+      <div id="page4">
+        <a id="add-pet" class="smooth"></a>
+          <div class="well">
+            <form class="pet">
+              <div class="form-group">
+                  <label for="pet-name">Please enter Pet name</label>
+                  <input type="text" class="form-control" placeholder="Name" id="pet-name">
+              </div>
+              <div class="form-group">
+                  <label for="pet-type">Choose Pet type</label><br>
+                  <select class="form-control size">
+                      <option value="cat">Cat</option>
+                      <option value="dog">Dog</option>
+                  </select>
+              </div>
+              <div class="form-group">
+                  <label for="pet-age">Please enter Pet age</label>
+                  <input type="text" class="form-control" placeholder="Age" id="pet-age">
+              </div>
+              <button type="submit" class="btn">Add Pet</button>
+            </form>
+
+          </div>
       </div>
   </div>
   </body>
