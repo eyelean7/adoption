@@ -57,17 +57,18 @@ $(document).ready(function() {
          "<th>adopted</th>" +
        "</tr>" +
        "<tr>" +
-        "<td>"image"</td>" +
-        "<td>"name"</td>" +
-        "<td>"animal"</td>" +
-        "<td>"colors"</td>" +
-        "<td>"age"</td>" +
-        "<td>"breed"</td>" +
-        "<td>"adopted"</td>" +
+        "<td>"+image+"</td>" +
+        "<td>"+name+"</td>" +
+        "<td>"+animal+"</td>" +
+        "<td>"+colors+"</td>" +
+        "<td>"+age+"</td>" +
+        "<td>"+breed+"</td>" +
+        "<td>"+adopted+"</td>" +
        "</tr>" +
       "</table>");
-    }
+    });
   });
+});
   // $("#add-address").click(function() {
   //   $("#new-addresses").append('<div class="new-address removable">' +
   //                                '<div class="form-group">' +
@@ -124,7 +125,7 @@ $(document).ready(function() {
     resetFields();
 
   });
-});
+
 
 
 
