@@ -10,8 +10,13 @@
   height: 1100px;
 
 }
-.pet {
-  display:none;
+
+/*.pet {
+  display:none;}*/
+
+#page4 {
+  height: 1100px;
+
 }
 
 body {
@@ -24,4 +29,9 @@ body {
 
 .well {
   margin-top: 10em;
+}
+
+
+img {
+  width:100%;
 }

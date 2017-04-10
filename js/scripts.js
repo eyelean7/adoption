@@ -1,12 +1,10 @@
 //business logic
-function Pet(image, name, animal, colors, age, breed, adopted) {
-  this.image = image;
+function Pet(name, animal, colors, age, breed) {
   this.name = name;
   this.animal = animal;
   this.colors = colors;
   this.age = age;
   this.breed = breed;
-  this.adopted = adopted;
 }
 
 
@@ -16,19 +14,9 @@ Pet.prototype.fullName = function() {
 }
 
 Pet.prototype.petInfo = function() {
-  return "hello"
-// "<div>" +
-//  "<ul>" +
-//   "<li>" + this.image + "</li>" +
-//   "<li>" + this.name + "</li>" +
-//   "<li>" + this.animal + "</li>" +
-//   "<li>" + this.colors + "</li>" +
-//   "<li>" + this.age + "</li>" +
-//   "<li>" + this.breed + "</li>" +
-//   "<li>" + this.adopted + "</li>" +
-//  "</ul>" +
-// "</div>";
-// console.log(this.name, this.animal, this.age);
+  return this.name, this.animal;
+
+console.log(this.name, this.animal, this.age);
 
 }
 
@@ -36,31 +24,43 @@ Pet.prototype.petInfo = function() {
 
 // user interface logic
 $(document).ready(function() {
-  $(".add-pet").click(function(event) {
+
+  $("#pet").submit(function(event) {
+  event.preventDefault();
+  var petName = $("input#pet-name").val();
+  var petType = $(".size").val();
+  var petAge = $("input#pet-age").val();
+  var petColor = $("input#pet-color").val();
+  var petBreed = $("input#pet-breed").val();
+
+  var newPet = new Pet(petName, petType, petAge, petColor, petBreed);
+  console.log(newPet);
+  newPet.petInfo();
+
+  $(".new-pet").append(
+      "<li>" + newPet.name + "</li>" +
+      "<li>" + newPet.animal + "</li>" +
+      "<li>" + newPet.colors + "</li>" +
+      "<li>" + newPet.age + "</li>" +
+      "<li>" + newPet.breed + "</li>" +
+      "<li>" + newPet.adopted + "</li>"
+      //add adopt button when adopted === false
+);
+
+    // "<li>"+ newPet.petInfo() + "</li>");
+
+
+
+  $(".test").click(function(event) {
     event.preventDefault();
-    $(".pet").show();
-    $(".pet").submit(function(event) {
-    event.preventDefault();
-    var petName = $("input#pet-name").val();
-    var petType = $(".size").val();
-    var petAge = $("input#pet-age").val();
-    var newPet = new Pet("image", petName, petType, ["blue", "greeen"], petAge, "calico", false);
-    console.log(newPet);
-    $(".new-pet").append(
-      "<li>"+ newPet.petInfo() + "</li>");
+    newPet.petInfo();
+    console.log(newPet.petInfo());
+
+  });
+  $(".added-pet").click(function() {
 
 
 
-    $(".test").click(function(event) {
-      event.preventDefault();
-      newPet.petInfo();
-      console.log(newPet.petInfo());
-
-    });
-    $(".added-pet").click(function() {
-
-
-    });
   });
 
 
