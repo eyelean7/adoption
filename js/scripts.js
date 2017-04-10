@@ -9,12 +9,14 @@ function Pet(image, name, animal, colors, age, breed, adopted) {
   this.adopted = adopted;
 }
 
+
+
 Pet.prototype.fullName = function() {
   return this.firstName + " " + this.lastName;
 }
-myPet = new Pet("img/cuddles.jpg", "Buster", "cat", "calico", 4, "calico", false);
-// Pet.prototype.petInfo = function() {
-//   return
+
+Pet.prototype.petInfo = function() {
+  // return
 // "<table>" +
 //  "<tr>" +
 //    "<th>image</th>" +
@@ -26,70 +28,64 @@ myPet = new Pet("img/cuddles.jpg", "Buster", "cat", "calico", 4, "calico", false
 //    "<th>adopted</th>" +
 //  "</tr>" +
 //  "<tr>" +
-//   "<td>"image"</td>" +
-//   "<td>"name"</td>" +
-//   "<td>"animal"</td>" +
-//   "<td>"colors"</td>" +
-//   "<td>"age"</td>" +
-//   "<td>"breed"</td>" +
-//   "<td>"adopted"</td>" +
+//   "<td>"this.image"</td>" +
+//   "<td>"this.name"</td>" +
+//   "<td>"this.animal"</td>" +
+//   "<td>"this.colors"</td>" +
+//   "<td>"this.age"</td>" +
+//   "<td>"this.breed"</td>" +
+//   "<td>"this.adopted"</td>" +
 //  "</tr>" +
 // "</table>"
-// }
+console.log(this.name, this.animal, this.age);
+}
 
 
 
 // user interface logic
 $(document).ready(function() {
-  $(".clicky").click(function(event) {
+  $(".add-pet").click(function(event) {
     event.preventDefault();
-    console.log(myPet);
+    $(".pet").show();
+    $(".pet").submit(function(event) {
+    event.preventDefault();
 
-    $(".add-pet").click(function() {
-      $(".new-pet").append("<table>" +
-       "<tr>" +
-         "<th>image</th>" +
-         "<th>name</th>" +
-         "<th>animal</th>" +
-         "<th>colors</th>" +
-         "<th>age</th>" +
-         "<th>breed</th>" +
-         "<th>adopted</th>" +
-       "</tr>" +
-       "<tr>" +
-        "<td>"+image+"</td>" +
-        "<td>"+name+"</td>" +
-        "<td>"+animal+"</td>" +
-        "<td>"+colors+"</td>" +
-        "<td>"+age+"</td>" +
-        "<td>"+breed+"</td>" +
-        "<td>"+adopted+"</td>" +
-       "</tr>" +
-      "</table>");
+
+    var petName = $("input#pet-name").val();
+    var petType = $(".size").val();
+    var petAge = $("input#pet-age").val();
+    var newPet = new Pet("image", petName, petType, ["blue", "greeen"], petAge, "calico", false);
+    console.log(newPet);
+    $(".test").click(function(event) {
+      event.preventDefault();
+      newPet.petInfo();
+    });
     });
   });
+
+  $(".add-pet").click(function() {
+    $(".new-pet").append("<table>" +
+     "<tr>" +
+       "<th>image</th>" +
+       "<th>name</th>" +
+       "<th>animal</th>" +
+       "<th>colors</th>" +
+       "<th>age</th>" +
+       "<th>breed</th>" +
+       "<th>adopted</th>" +
+     "</tr>" +
+     "<tr>" +
+      "<td>"+image+"</td>" +
+      "<td>"+name+"</td>" +
+      "<td>"+animal+"</td>" +
+      "<td>"+colors+"</td>" +
+      "<td>"+age+"</td>" +
+      "<td>"+breed+"</td>" +
+      "<td>"+adopted+"</td>" +
+     "</tr>" +
+    "</table>");
+  });//end add pet
 });
-  // $("#add-address").click(function() {
-  //   $("#new-addresses").append('<div class="new-address removable">' +
-  //                                '<div class="form-group">' +
-  //                                  '<label for="new-street">Street</label>' +
-  //                                  '<input type="text" class="form-control new-street">' +
-  //                                '</div>' +
-  //                                '<div class="form-group">' +
-  //                                  '<label for="new-city">City</label>' +
-  //                                  '<input type="text" class="form-control new-city">' +
-  //                                '</div>' +
-  //                                '<div class="form-group">' +
-  //                                  '<label for="new-state">State</label>' +
-  //                                  '<input type="text" class="form-control new-state">' +
-  //                                '</div>' +
-  //                              '</div>' +
-  //                              '<div>' + '<label for="addressType">Type of Address</label><br>' +
-  //                              '<select class="form-group" class="new-type">' + '<option>Home</option>' +
-  //                              '<option>Work</option>' + '<option>Mailing</option>' + '<option>Other</option>' +
-  //                              '</select>' + '</div>'
-  //                            );
-  // });
 
   $("form#new-contact").submit(function(event) {
     event.preventDefault();
