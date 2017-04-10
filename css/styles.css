@@ -18,7 +18,9 @@
   height: 1100px;
 
 }
-
+.panel-body {
+  display: none;
+}
 body {
   background-image:url(../img/dog.jpg);
   background-repeat: no-repeat;
