@@ -39,30 +39,24 @@ $(document).ready(function() {
       "<div class='panel'>" +
       "<div class='panel panel-heading'>" + newPet.name + "</div>" +
       "<div class='panel-body'>" +
-          // "<ul>" +
-          //   "<li>" + newPet.name + "</li>" +
-          //   "<li>" + newPet.animal + "</li>" +
-          //   "<li>" + newPet.colors + "</li>" +
-          //   "<li>" + newPet.age + "</li>" +
-          //   "<li>" + newPet.breed + "</li>" +
-          //   "<li>" + newPet.adopted + "</li>" +
-          //   //add adopt button when adopted === false
-          // "</ul>" +
+          "<ul>" +
+            "<li>" + newPet.animal + "</li>" +
+            "<li>" + newPet.colors + "</li>" +
+            "<li>" + newPet.age + "</li>" +
+            "<li>" + newPet.breed + "</li>" +
+            "<li>" + newPet.adopted + "</li>" +
+            //add adopt button when adopted === false
+          "</ul>" +
+          "<button type='button' class='btn adopt-pet'><a href='#adopt'>Adopt</a></button>" +
         "</div>" +
       "</div>");
-
+      $(".adopt-pet").click(function() {
+        $("#pet-to-adopt").val(newPet.name);
+      });
 
      $(".added-pet").last().click(function() {
        $(".panel-body").show();
-       $(".panel-body").append("<ul>" +
-         "<li>" + newPet.name + "</li>" +
-         "<li>" + newPet.animal + "</li>" +
-         "<li>" + newPet.colors + "</li>" +
-         "<li>" + newPet.age + "</li>" +
-         "<li>" + newPet.breed + "</li>" +
-         "<li>" + newPet.adopted + "</li>" +
-         //add adopt button when adopted === false
-       "</ul>");
+
        console.log(newPet.colors);
      });
    });
