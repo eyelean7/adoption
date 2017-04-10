@@ -20,7 +20,7 @@
            </ul>
       </div>
   </nav>
-
+<!-- Page 1 About -->
       <div id="page1">
         <a id="about" class="smooth"></a>
           <div class="well">
@@ -40,26 +40,85 @@ Take a virtual tour of the shelter here.
             </p>
           </div>
       </div>
-
+<!-- Page 2 Pets -->
       <div id="page2">
         <a id="pets" class="smooth"></a>
-          Pets available.
+          <div class="row">
+            <div class="col-md-4">
+              <div class="panel" id="pet1">
+                  <div class="panel panel-heading">
+                    <h4>Kitty Cat</h4>
+                  </div>
+                  <img src="img/cat1.jpeg" alt="Kitty" />
+                  <div class="pet-info">
+                    <p>
+                      <span id="pet-info1"></span>
+                    </p>
+                  </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="panel" id="pet2">
+                  <div class="panel panel-heading">
+                    <h4>Doggy Dog</h4>
+                  </div>
+                  <img src="img/dog1.jpg" alt="Doggy Dog" />
+                  <div class="pet-info">
+                    <p>
+                      <span id="pet-info2"></span>
+                    </p>
+                  </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="panel" id="pet3">
+                  <div class="panel panel-heading">
+                    <h4>Dodo Dog</h4>
+                  </div>
+                  <img src="img/dog3.jpg" alt="DoDog" />
+                  <div class="pet-info">
+                    <p>
+                      <span id="pet-info3"></span>
+                    </p>
+                  </div>
+              </div>
+            </div>
+          </div>
       </div>
-
+<!-- Page 1 Adopt Pet -->
       <div id="page3">
         <a id="adopt" class="smooth"></a>
-          Adopt form.
+          <div class="well">
+            <form id="person-contact">
+              <h3>Please enter your information</h3>
+                <div class="form-group">
+                    <label for="person-name">Your full name</label>
+                    <input type="text" class="form-control" placeholder="Name" id="person-name">
+                </div>
+                <div class="form-group">
+                    <label for="pet">Pet name your want to adopt</label>
+                    <input type="text" class="form-control" placeholder="Pet Name" id="pet-to-adopt">
+                </div>
+                <div class="form-group">
+                    <label for="building">Your phone number</label>
+                    <input type="text" class="form-control" placeholder="Phone" id="phone">
+                </div>
+                <button id="adopt"type="submit" class="btn">Adopt</button>
+              </form>
+          </div>
       </div>
+<!-- Page 4 Add Pet -->
       <div id="page4">
         <a id="add-pet" class="smooth"></a>
           <div class="well">
-            <form class="pet">
+            <form id="pet">
+              <h3>Please enter Pet information</h3>
               <div class="form-group">
                   <label for="pet-name">Please enter Pet name</label>
                   <input type="text" class="form-control" placeholder="Name" id="pet-name">
               </div>
               <div class="form-group">
-                  <label for="pet-type">Choose Pet type</label><br>
+                  <label for="pet-type">Select Pet type</label><br>
                   <select class="form-control size">
                       <option value="cat">Cat</option>
                       <option value="dog">Dog</option>
@@ -69,9 +128,8 @@ Take a virtual tour of the shelter here.
                   <label for="pet-age">Please enter Pet age</label>
                   <input type="text" class="form-control" placeholder="Age" id="pet-age">
               </div>
-              <button type="submit" class="btn">Add Pet</button>
+              <button id="add-pet"type="submit" class="btn">Add Pet</button>
             </form>
-
           </div>
       </div>
   </div>
